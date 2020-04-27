@@ -1,0 +1,168 @@
+$primary-color: #c72727;
+$secondary-color: #f99500;
+$light-color: #f3f3f3;
+$dark-color: #333;
+$max-width: 1100px;
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato',sans-serif;
+    line-height: 1.4;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+
+h1,h2,h3,h4{
+    font-family: 'Staatliches', cursive;
+}
+// UTILITIES
+
+@mixin query($breakpoint){
+    @if $breakpoint == tab{
+        @media only screen and (max-width:768px){@content};
+    }
+    @if $breakpoint == cp{
+        @media only screen and (max-width:37.5em){@content};
+    }
+}
+
+
+.container{
+    max-width:$max-width;
+    margin:0 auto;
+    padding:1rem;
+}
+
+.u-mary-bg{margin: 6rem 0;}
+.u-mary-md{margin: 3rem 0;}
+.u-mary-sm{margin: 1rem 0;}
+
+.u-martop-bg{margin-top:6rem;}
+.u-martop-md{margin-top:3rem;}
+.u-martop-sm{margin-top:1rem;}
+
+.u-marbot-bg{margin-bottom:6rem;}
+.u-marbot-md{margin-bottom:3rem;}
+.u-marbot-sm{margin-bottom:1rem;}
+
+.u-pady-bg{padding: 6rem 0;}
+.u-pady-md{padding: 3rem 0;}
+.u-pady-sm{padding: 1rem 0;}
+
+.bg-light{
+    background-color: $light-color !important;
+}
+
+.bg-dark{
+    background-color: $dark-color !important;
+    color: white;
+}
+
+.bg-red{
+    background-color: $primary-color !important;
+    color: white;
+}
+
+.bg-orange{
+    background-color: orange !important;
+    color: white;
+}
+
+.bg-white{
+    background-color: white !important;
+    color: $dark-color;
+}
+
+.current{
+    background-color: $primary-color;
+    color: white;
+    &:hover{
+        background-color: $light-color;
+        color: $dark-color;
+    }
+}
+
+.tag{
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    display: inline-block;
+    background-color: black;
+    padding: 0.4rem 0.6rem;
+    border-radius: 1rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+
+    &--orange{
+        background-color: orange;
+    }
+    &--purp{
+        background-color: purple;
+    }
+    &--blue{
+        background-color: skyblue;
+    }
+}
+
+.heading-1{
+    text-transform: uppercase;
+    color: white;
+    line-height: 1;
+}
+
+.heading-4{
+    font-size: 1.3rem;
+}
+
+
+
+.btn{
+    background-color: $primary-color;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background-color: darken(#c72727,10%);
+    }
+    &--orange{
+        background-color: orange;
+        &:hover{
+            background-color: darken(orange,10%);
+        }
+    }
+    &--dark{
+        background-color: #333333;
+        &:hover{
+            background-color: darken(#333333,10%);
+        }
+    }
+
+
+  
+}
+
+
+// IMPORT
+@import "layout";
+@import "components";
